@@ -41,7 +41,7 @@ Installing Documents is simple.
     
 3. Publish the migrations and configuration files.
     ```bash
-        php artisan vendor:publish --provider:"Nuclear\Documents\Providers\DocumentsServiceProvider"
+    php artisan vendor:publish --provider:"Nuclear\Documents\Providers\DocumentsServiceProvider"
     ```
     Do not forget to migrate the database.
 
