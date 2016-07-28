@@ -1,0 +1,56 @@
+{
+    "name": "nuclear/documents",
+    "description": "Document management system with embedding, uploading, downloading for different media types.",
+    "license": "MIT",
+    "keywords": [
+        "kenarkose",
+        "nuclear",
+        "nuclearcms",
+        "documents",
+        "embed",
+        "download",
+        "upload",
+        "media",
+        "laravel",
+        "laravel5"
+    ],
+    "version": "0.9.0",
+    "authors": [
+        {
+            "name": "Hyleeh",
+            "email": "egemen@kenarkose.com",
+            "homepage": "http://egemenkizilcan.com",
+            "role": "Developer / Designer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "kenarkose/files": "~2.0",
+        "kenarkose/ownable": "~1.1",
+        "kenarkose/sortable": "~1.0",
+        "kenarkose/transit": "~2.1",
+        "dimsav/laravel-translatable": "~5.5",
+        "laracasts/presenter": "0.2.*",
+        "intervention/image": "~2.3",
+        "intervention/imagecache": "~2.3",
+        "simexis/oembed": "^1.4",
+        "nicolaslopezj/searchable": "^1.9"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nuclear\\Documents\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests"
+        ]
+    }
+}
