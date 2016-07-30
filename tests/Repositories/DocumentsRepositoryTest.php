@@ -32,11 +32,16 @@ class DocumentsRepositoryTest extends TestBase {
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            $repository->getDocument($media->getKey())
+            $repository->getDocuments($media->getKey())
+        );
+
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection',
+            $repository->getDocuments([$media->getKey()])
         );
 
         $this->assertNull(
-            $repository->getDocument(0)
+            $repository->getDocuments(0)
         );
     }
 

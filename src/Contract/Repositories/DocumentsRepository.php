@@ -12,7 +12,7 @@ interface DocumentsRepository {
      * @param int $id
      * @return Media
      */
-    public function getDocument($id);
+    public function getDocuments($id);
 
     /**
      * Returns the gallery by given ids

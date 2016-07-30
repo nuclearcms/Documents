@@ -14,7 +14,7 @@ class DocumentsRepository implements DocumentsRepositoryContract {
      * @param int $id
      * @return Media
      */
-    public function getDocument($id)
+    public function getDocuments($id)
     {
         $mediaModel = $this->getMediaModelName();
 

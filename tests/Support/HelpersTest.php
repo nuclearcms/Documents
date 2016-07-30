@@ -26,11 +26,16 @@ class HelpersTest extends TestBase {
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            get_reactor_document($media->getKey())
+            get_reactor_documents($media->getKey())
+        );
+
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection',
+            get_reactor_documents([$media->getKey()])
         );
 
         $this->assertNull(
-            get_reactor_document(0)
+            get_reactor_documents(0)
         );
     }
 

@@ -8,10 +8,10 @@ if ( ! function_exists('get_reactor_document'))
      * @param int $id
      * @return Media
      */
-    function get_reactor_document($id)
+    function get_reactor_documents($id)
     {
         return app(Nuclear\Documents\Repositories\DocumentsRepository::class)
-            ->getDocument($id);
+            ->getDocuments($id);
     }
 }
 
