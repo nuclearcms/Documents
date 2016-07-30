@@ -4,8 +4,9 @@
 namespace Nuclear\Documents\Repositories;
 
 
+use Nuclear\Documents\Contract\Repositories\DocumentsRepository as DocumentsRepositoryContract;
 
-class DocumentsRepository {
+class DocumentsRepository implements DocumentsRepositoryContract {
 
     /**
      * Returns the document by given id
