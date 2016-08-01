@@ -5,7 +5,7 @@ if ( ! function_exists('get_nuclear_document'))
     /**
      * Returns the document for given id
      *
-     * @param int $id
+     * @param int|array $id
      * @return Media
      */
     function get_nuclear_documents($id)

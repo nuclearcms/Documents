@@ -11,7 +11,7 @@ class DocumentsRepository implements DocumentsRepositoryContract {
     /**
      * Returns the document by given id
      *
-     * @param int $id
+     * @param int|array $id
      * @return Media
      */
     public function getDocuments($id)
@@ -29,7 +29,7 @@ class DocumentsRepository implements DocumentsRepositoryContract {
      */
     public function getGallery($ids)
     {
-        if (empty($ids) || $ids === '{}') return null;
+        if (empty($ids) || $ids === '{}' || $ids === '[]') return null;
 
         $ids = $this->parseGalleryIds($ids);
 
@@ -53,7 +53,7 @@ class DocumentsRepository implements DocumentsRepositoryContract {
      */
     public function getCover($ids)
     {
-        if (empty($ids) || $ids === '{}') return null;
+        if (empty($ids) || $ids === '{}' || $ids === '[]') return null;
 
         $ids = $this->parseGalleryIds($ids);
 
