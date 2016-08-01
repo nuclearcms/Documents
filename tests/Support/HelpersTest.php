@@ -20,49 +20,49 @@ class HelpersTest extends TestBase {
     }
 
     /** @test */
-    function it_gets_a_reactor_document()
+    function it_gets_a_nuclear_document()
     {
         $media = $this->getNewMedia();
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            get_reactor_documents($media->getKey())
+            get_nuclear_documents($media->getKey())
         );
 
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',
-            get_reactor_documents([$media->getKey()])
+            get_nuclear_documents([$media->getKey()])
         );
 
         $this->assertNull(
-            get_reactor_documents(0)
+            get_nuclear_documents(0)
         );
     }
 
     /** @test */
-    function it_gets_a_reactor_gallery()
+    function it_gets_a_nuclear_gallery()
     {
         // Will not be tested due to SQLite missing field function
     }
 
     /** @test */
-    function it_gets_a_reactor_cover()
+    function it_gets_a_nuclear_cover()
     {
         $media = $this->getNewMedia();
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            get_reactor_cover($media->getKey())
+            get_nuclear_cover($media->getKey())
         );
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            get_reactor_cover([$media->getKey()])
+            get_nuclear_cover([$media->getKey()])
         );
 
         $this->assertInstanceOf(
             'Nuclear\Documents\Media\Image',
-            get_reactor_cover('[' . $media->getKey() . ']')
+            get_nuclear_cover('[' . $media->getKey() . ']')
         );
     }
 

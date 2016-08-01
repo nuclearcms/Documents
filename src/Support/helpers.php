@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists('get_reactor_document'))
+if ( ! function_exists('get_nuclear_document'))
 {
     /**
      * Returns the document for given id
@@ -8,14 +8,14 @@ if ( ! function_exists('get_reactor_document'))
      * @param int $id
      * @return Media
      */
-    function get_reactor_documents($id)
+    function get_nuclear_documents($id)
     {
         return app(Nuclear\Documents\Repositories\DocumentsRepository::class)
             ->getDocuments($id);
     }
 }
 
-if ( ! function_exists('get_reactor_gallery'))
+if ( ! function_exists('get_nuclear_gallery'))
 {
     /**
      * Returns the gallery for given id
@@ -23,14 +23,14 @@ if ( ! function_exists('get_reactor_gallery'))
      * @param int|string|array $ids
      * @return Collection
      */
-    function get_reactor_gallery($ids)
+    function get_nuclear_gallery($ids)
     {
         return app(Nuclear\Documents\Repositories\DocumentsRepository::class)
             ->getGallery($ids);
     }
 }
 
-if ( ! function_exists('get_reactor_cover'))
+if ( ! function_exists('get_nuclear_cover'))
 {
     /**
      * Returns the cover for given ids
@@ -38,7 +38,7 @@ if ( ! function_exists('get_reactor_cover'))
      * @param int|string|array $ids
      * @return Media
      */
-    function get_reactor_cover($ids)
+    function get_nuclear_cover($ids)
     {
         return app(Nuclear\Documents\Repositories\DocumentsRepository::class)
             ->getCover($ids);
