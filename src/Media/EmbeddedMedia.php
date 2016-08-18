@@ -34,7 +34,7 @@ class EmbeddedMedia extends Media implements FiltersImageContract {
         $this->mimetype = mb_strtolower($oEmbed->providerName);
         $this->size = 0;
 
-        $this->title = $oEmbed->title;
+        $this->name = $oEmbed->title;
         $this->caption = $oEmbed->title;
         $this->description = $oEmbed->description;
 
