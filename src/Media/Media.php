@@ -4,6 +4,7 @@ namespace Nuclear\Documents\Media;
 
 
 use Dimsav\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Builder;
 use Intervention\Image\Facades\Image as ImageFacade;
 use Kenarkose\Files\Determine\AutoDeterminesType;
 use Kenarkose\Ownable\AutoAssociatesOwner;
