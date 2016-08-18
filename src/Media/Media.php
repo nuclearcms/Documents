@@ -80,7 +80,7 @@ class Media extends TransitFile {
             'media_translations.caption' => 10,
         ],
         'joins'   => [
-            'translations' => ['media.id', 'media_translations.media_id'],
+            'media_translations' => ['media.id', 'media_translations.media_id'],
         ],
     ];
 
