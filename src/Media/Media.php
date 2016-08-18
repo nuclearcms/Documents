@@ -52,7 +52,7 @@ class Media extends TransitFile {
      *
      * @var array
      */
-    protected $sortableColumns = ['created_at'];
+    protected $sortableColumns = ['name', 'updated_at', 'created_at'];
 
     /**
      * Default sortable key
