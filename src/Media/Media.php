@@ -101,6 +101,7 @@ class Media extends TransitFile {
         static::creating(function ($embeddedMedia)
         {
             $embeddedMedia->populateDefaultMetadata();
+            $embeddedMedia->compileMetadata();
         });
     }
 

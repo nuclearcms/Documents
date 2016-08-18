@@ -43,14 +43,14 @@ class EmbeddedMedia extends Media implements FiltersImageContract {
         $this->setMetadata('provider_url', $oEmbed->providerUrl);
         $this->setMetadata('provider_icon', $oEmbed->providerIcon);
 
-        if ( ! empty($oEmbed->image))
+        if ( ! is_null($oEmbed->image))
         {
             $this->setMetadata('thumbnail_url', $oEmbed->image);
             $this->setMetadata('thumbnail_width', $oEmbed->imageWidth);
             $this->setMetadata('thumbnail_height', $oEmbed->imageHeight);
         }
 
-        if ( ! empty($oEmbed->authorName))
+        if ( ! is_null($oEmbed->authorName))
         {
             $this->setMetadata('author_name', $oEmbed->authorName);
             $this->setMetadata('author_url', $oEmbed->authorUrl);
