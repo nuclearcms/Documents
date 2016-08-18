@@ -117,6 +117,25 @@ class Media extends TransitFile {
     }
 
     /**
+     * Scope for request filter
+     *
+     * @param Builder $query
+     * @param string $type
+     * @return Builder
+     */
+    public function scopeFilteredByType(Builder $query, $type = null)
+    {
+        $type = is_null($type) ? request('f', 'all') : $type;
+
+        if (in_array($type, ['audio', 'document', 'image', 'video', 'embedded']))
+        {
+            $query->whereType($type);
+        }
+
+        return $query;
+    }
+
+    /**
      * Path accessor
      *
      * @param string $value
