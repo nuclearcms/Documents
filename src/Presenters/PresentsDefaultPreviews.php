@@ -14,7 +14,7 @@ trait PresentsDefaultPreviews {
     public function preview()
     {
         return $this->wrapPreview(
-            $this->name() . $this->originalLink() . $this->metaDescription()
+            $this->originalLink() . $this->metaDescription()
         );
     }
 
@@ -26,7 +26,7 @@ trait PresentsDefaultPreviews {
     public function compactPreview()
     {
         return $this->wrapPreview(
-            $this->name() . $this->originalLink() . $this->metaDescription(),
+            $this->originalLink() . $this->metaDescription(),
             true);
     }
 
