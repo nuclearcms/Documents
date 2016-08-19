@@ -36,11 +36,12 @@ trait PresentsFilteredImage {
      * Wraps the image url with the necessary html
      *
      * @param string $url
+     * @param string $class
      * @return string
      */
-    public function wrapImage($url)
+    public function wrapImage($url, $class = '')
     {
-        return '<img class="document-thumbnail__image" src="' .
+        return '<img class="' . $class . '" src="' .
             $url . '" alt="' . $this->alttext . '">';
     }
 

@@ -7,11 +7,11 @@ namespace Nuclear\Documents\Contract\Presenters;
 interface PresentsMedia {
 
     /**
-     * Presents the title
+     * Presents the name
      *
      * @return string
      */
-    public function title();
+    public function name();
 
     /**
      * Presents the caption

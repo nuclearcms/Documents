@@ -21,7 +21,7 @@ class ImagePresenter extends Presenter implements PresentsMediaContract {
      */
     public function thumbnail()
     {
-        return $this->wrapThumbnail($this->filteredImageWith('rthumb'));
+        return $this->wrapThumbnail($this->filteredImageWith('rthumb'), 'document-thumbnail__image');
     }
 
     /**

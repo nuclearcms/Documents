@@ -9,7 +9,7 @@ use Nuclear\Documents\Repositories\DocumentsRepository;
 
 class DocumentsServiceProvider extends ServiceProvider {
 
-    const version = '0.9.17';
+    const version = '0.9.18';
 
     /**
      * Indicates if loading of the provider is deferred.

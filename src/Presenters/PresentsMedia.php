@@ -6,13 +6,13 @@ namespace Nuclear\Documents\Presenters;
 trait PresentsMedia {
 
     /**
-     * Presents the title
+     * Presents the name
      *
      * @return string
      */
-    public function title()
+    public function name()
     {
-        return '<p class="preview__title">' . $this->title . '</p>';
+        return '<p class="preview__name">' . $this->name . '</p>';
     }
 
     /**
@@ -64,7 +64,7 @@ trait PresentsMedia {
      */
     public function originalLink()
     {
-        return '<a href="' . $this->entity->getPublicURL() . '" target="_blank" class="preview__original-link">' . $this->title . '</a>';
+        return '<a href="' . $this->entity->getPublicURL() . '" target="_blank" class="preview__original-link">' . $this->name . '</a>';
     }
 
     /**
