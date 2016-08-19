@@ -12,7 +12,7 @@ trait PresentsMedia {
      */
     public function name()
     {
-        return '<p class="preview__name">' . $this->name . '</p>';
+        return '<p class="preview__name">' . $this->entity->name . '</p>';
     }
 
     /**

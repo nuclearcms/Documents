@@ -24,12 +24,13 @@ trait PresentsFilteredImage {
     /**
      * Returns the image html for given filter
      *
-     * @param $filter
+     * @param string $filter
+     * @param string $class
      * @return string
      */
-    public function filteredImageWith($filter)
+    public function filteredImageWith($filter, $class = '')
     {
-        return $this->wrapImage($this->entity->getFilteredImageUrlFor($filter));
+        return $this->wrapImage($this->entity->getFilteredImageUrlFor($filter), $class);
     }
 
     /**
