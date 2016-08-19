@@ -29,7 +29,7 @@ class EmbeddedMediaPresenter extends Presenter implements PresentsMediaContract 
         }
 
         return $this->wrapThumbnail(
-            $this->filteredImageWith('rthumb')
+            $this->filteredImageWith('rthumb', 'document-thumbnail__image')
         );
     }
 
