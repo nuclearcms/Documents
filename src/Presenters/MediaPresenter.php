@@ -42,6 +42,15 @@ class MediaPresenter extends Presenter implements PresentsMediaContract {
      */
     public function thumbnail()
     {
+        // This part is because of the uploader
+        if ($this->type === 'image')
+        {
+            return $this->wrapThumbnail(
+                '<img class="document-thumbnail__image" src="' .
+                url(config('imagecache.route') . '/rthumb/' . $this->path). '" alt="' . $this->alttext . '">'
+            );
+        }
+
         $icon = 'document';
 
         if (array_key_exists($this->mimetype, $this->icons))

@@ -25,6 +25,13 @@ class Media extends TransitFile {
     protected $table = 'media';
 
     /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 30;
+
+    /**
      * The fillable fields for the model.
      *
      * @var  array
