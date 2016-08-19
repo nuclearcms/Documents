@@ -12,7 +12,7 @@ trait PresentsMedia {
      */
     public function title()
     {
-        return '<p class="document__title">' . $this->title . '</p>';
+        return '<p class="preview__title">' . $this->title . '</p>';
     }
 
     /**
@@ -22,7 +22,7 @@ trait PresentsMedia {
      */
     public function caption()
     {
-        return '<p class="document__caption">' . $this->caption . '</p>';
+        return '<p class="preview__caption">' . $this->caption . '</p>';
     }
 
     /**
@@ -32,7 +32,7 @@ trait PresentsMedia {
      */
     public function description()
     {
-        return '<p class="document__description">' . $this->description . '</p>';
+        return '<p class="preview__description">' . $this->description . '</p>';
     }
 
     /**
@@ -64,7 +64,7 @@ trait PresentsMedia {
      */
     public function originalLink()
     {
-        return '<a href="' . $this->entity->getPublicURL() . '" target="_blank" class="document__original-link">' . $this->title . '</a>';
+        return '<a href="' . $this->entity->getPublicURL() . '" target="_blank" class="preview__original-link">' . $this->title . '</a>';
     }
 
     /**
@@ -90,7 +90,7 @@ trait PresentsMedia {
      */
     public function wrapMetaDescription($description)
     {
-        return '<p class="document__meta-description">' . $description . '</p>';
+        return '<p class="preview__meta-description">' . $description . '</p>';
     }
 
     /**
@@ -102,8 +102,8 @@ trait PresentsMedia {
      */
     public function wrapPreview($preview, $compact = false)
     {
-        return '<p class="document' . ($compact ? '--compact' : '') . '">' .
-            $preview . '</p>';
+        return '<div class="preview' . ($compact ? 'preview--compact' : '') . '">' .
+            $preview . '</div>';
     }
 
 }

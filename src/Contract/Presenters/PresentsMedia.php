@@ -35,7 +35,7 @@ interface PresentsMedia {
     public function thumbnail();
 
     /**
-     * Presents the orginal link
+     * Presents the original link
      *
      * @return string
      */
