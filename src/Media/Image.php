@@ -59,7 +59,16 @@ class Image extends Media implements FiltersImageContract {
      */
     protected function processImage($action, InterventionImage $image)
     {
-        list($method, $param) = explode('_', $action);
+        $action = explode('_', $action);
+
+        if (count($action) > 1)
+        {
+            list($method, $param) = $action;
+        } else
+        {
+            $method = current($action);
+            $param = [];
+        }
 
         if ($method === 'crop')
         {
