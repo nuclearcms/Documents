@@ -14,11 +14,11 @@ trait PresentsHtmlMedia {
      */
     public function presentHtmlMedia($mediaType)
     {
-        $html = '<source src="' . $this->path . '" type="' . $this->mimetype . '">';
+        $html = '<source src="' . $this->entity->getPublicURL() . '" type="' . $this->mimetype . '">';
 
         foreach($this->entity->substitutes as $substitute)
         {
-            $html .= '<source src="' . $substitute->path . '" type="' . $substitute->mimetype . '">';
+            $html .= '<source src="' . uploaded_asset($substitute->path) . '" type="' . $substitute->mimetype . '">';
         }
 
         return '<' . $mediaType . ' controls>' . $html . '</' . $mediaType . '>';

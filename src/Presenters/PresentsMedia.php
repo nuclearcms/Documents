@@ -102,7 +102,7 @@ trait PresentsMedia {
      */
     public function wrapPreview($preview, $compact = false)
     {
-        return '<div class="preview' . ($compact ? 'preview--compact' : '') . '">' .
+        return '<div class="preview preview--' . $this->type . ($compact ? ' preview--compact' : '') . '">' .
             $preview . '</div>';
     }
 
