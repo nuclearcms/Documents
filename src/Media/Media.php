@@ -32,6 +32,13 @@ class Media extends TransitFile {
     protected $perPage = 30;
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = ['translations'];
+
+    /**
      * The fillable fields for the model.
      *
      * @var  array
