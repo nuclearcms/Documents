@@ -220,4 +220,32 @@ class Media extends TransitFile {
         $this->setMetadata('height', $image->height());
     }
 
+    /**
+     * Summarizes the model
+     *
+     * @param bool $json
+     * @return array
+     */
+    public function summarize($json = false)
+    {
+        $attributes = [
+            'name' => $this->getAttribute('name'),
+            'type' => $this->getAttribute('type'),
+            'meta' => $this->present()->metaDescription,
+            'thumbnail' => $this->present()->thumbnail,
+            'preview' => ($this->type === 'image') ? $this->present()->filteredImageWith('rcompact') : ''
+        ];
+
+        foreach ($this->translations as $translation)
+        {
+            $attributes[$translation->locale] = [
+                'caption' => $translation->caption,
+                'description' => $translation->description,
+                'alttext' => $translation->alttext
+            ];
+        }
+
+        return $json ? json_encode($attributes) : $attributes;
+    }
+
 }
