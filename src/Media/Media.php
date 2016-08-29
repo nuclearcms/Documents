@@ -229,6 +229,7 @@ class Media extends TransitFile {
     public function summarize($json = false)
     {
         $attributes = [
+            'id' => $this->getKey(),
             'name' => $this->getAttribute('name'),
             'type' => $this->getAttribute('type'),
             'meta' => $this->present()->metaDescription,
