@@ -37,7 +37,7 @@ class DocumentsRepository implements DocumentsRepositoryContract {
 
         $imageModel = $this->getImageModelName();
 
-        $gallery = call_user_func_array([$imageModel, 'whereIn'], [$ids]);
+        $gallery = call_user_func_array([$imageModel, 'whereIn'], ['id', $ids]);
         $gallery = $gallery
             ->orderByRaw('field(id,' . $placeholders . ')', $ids)
             ->get();
