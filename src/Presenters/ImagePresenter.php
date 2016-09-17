@@ -15,6 +15,16 @@ class ImagePresenter extends Presenter implements PresentsMediaContract {
     }
 
     /**
+     * Presents the original
+     *
+     * @return string
+     */
+    public function original()
+    {
+        return $this->wrapImage($this->entity->getPublicURL());
+    }
+
+    /**
      * Presents the thumbnail
      *
      * @return string
@@ -48,7 +58,7 @@ class ImagePresenter extends Presenter implements PresentsMediaContract {
     public function preview()
     {
         return $this->wrapPreview(
-            $this->wrapImage(uploaded_asset($this->path))
+            $this->original()
         );
     }
 
