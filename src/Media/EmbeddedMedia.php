@@ -45,6 +45,8 @@ class EmbeddedMedia extends Media implements FiltersImageContract {
 
         if ( ! is_null($oEmbed->image))
         {
+            $this->createEmbeddedPath();
+
             $destination = 'embedded/' . $this->mimetype . '_' . md5($oEmbed->image);
             copy($oEmbed->image, upload_path($destination));
 
@@ -58,6 +60,24 @@ class EmbeddedMedia extends Media implements FiltersImageContract {
         {
             $this->setMetadata('author_name', $oEmbed->authorName);
             $this->setMetadata('author_url', $oEmbed->authorUrl);
+        }
+    }
+
+    /**
+     * Creates the current embedded directory
+     *
+     * @throws RuntimeException
+     */
+    protected function createEmbeddedPath()
+    {
+        $path = upload_path('embedded');
+
+        if ( ! file_exists($path))
+        {
+            if ( ! mkdir($path, 0777, true))
+            {
+                throw new RuntimeException('Directory (' . $path . ') could not be created.');
+            }
         }
     }
 
