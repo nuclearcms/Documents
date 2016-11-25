@@ -13,12 +13,26 @@ trait PresentsFilteredImage {
      * @param bool $compact
      * @return string
      */
-    public function previewWithFilter($filter, $compact = false)
+    public function previewWith($filter, $compact = false)
     {
         return $this->wrapPreview(
-            $this->filteredImageWith($filter),
+            $this->imageWith($filter),
             $compact
         );
+    }
+
+    /**
+     * Alias for previewWith
+     *
+     * @deprecated
+     *
+     * @param string $filter
+     * @param bool $compact
+     * @return string
+     */
+    public function previewWithFilter($filter, $compact = false)
+    {
+        return $this->previewWith($filter, $compact);
     }
 
     /**
@@ -28,9 +42,23 @@ trait PresentsFilteredImage {
      * @param string $class
      * @return string
      */
+    public function imageWith($filter, $class = '')
+    {
+        return $this->wrapImage($this->entity->imageURLFor($filter), $class);
+    }
+
+    /**
+     * Alias for imageWith
+     *
+     * @deprecated
+     *
+     * @param string $filter
+     * @param string $class
+     * @return string
+     */
     public function filteredImageWith($filter, $class = '')
     {
-        return $this->wrapImage($this->entity->getFilteredImageUrlFor($filter), $class);
+        return $this->imageWith($filter, $class);
     }
 
     /**

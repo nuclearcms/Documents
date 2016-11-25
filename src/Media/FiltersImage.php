@@ -12,9 +12,22 @@ trait FiltersImage {
      * @param $filter
      * @return string
      */
-    public function getFilteredImageUrlFor($filter)
+    public function imageURLFor($filter)
     {
         return url(config('imagecache.route') . '/' . $filter . '/' . $this->getImagePath());
+    }
+
+    /**
+     * Alias for imageURLFor
+     *
+     * @deprecated
+     *
+     * @param $filter
+     * @return string
+     */
+    public function getFilteredImageUrlFor($filter)
+    {
+        return $this->imageURLFor($filter);
     }
 
 }
